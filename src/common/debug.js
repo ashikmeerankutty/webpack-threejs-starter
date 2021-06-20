@@ -8,6 +8,7 @@ const gui = new dat.GUI();
  * @param {*} min
  * @param {*} max
  * @param {*} step
+ * @param {*} folder
  */
 export const addDebugUI = (debugObject, key, min, max, step, folder = gui) => {
   folder.add(debugObject, key, min, max, step);
