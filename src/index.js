@@ -1,5 +1,5 @@
 import './styles/index.scss';
-import * as THREE from 'three';
+import { BoxBufferGeometry, Mesh, MeshNormalMaterial } from 'three';
 import { enableOrbitControls, initializeEnvironment } from './common/base';
 import { addObjectDebugUI } from './common/debug';
 
@@ -10,13 +10,13 @@ const { scene, renderer, camera, canvas } = initializeEnvironment();
 const controls = enableOrbitControls(camera, canvas);
 
 // Create a geometry for cube
-const cubeGeometry = new THREE.BoxBufferGeometry(1, 1, 1);
+const cubeGeometry = new BoxBufferGeometry(1, 1, 1);
 
 // Create a material for cube
-const cubeMaterial = new THREE.MeshNormalMaterial();
+const cubeMaterial = new MeshNormalMaterial();
 
 // Create a cube mesh
-const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+const cube = new Mesh(cubeGeometry, cubeMaterial);
 
 // Add cube position and rotation params to debug ui
 addObjectDebugUI(cube.position, -3, 3, 0.01, 'Cube Position');

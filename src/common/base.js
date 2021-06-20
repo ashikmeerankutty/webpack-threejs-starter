@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import { PerspectiveCamera, Scene, WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export const sizes = {};
@@ -13,10 +13,10 @@ export const initializeEnvironment = () => {
   const canvas = document.querySelector('canvas.webgl');
 
   // Scene
-  const scene = new THREE.Scene();
+  const scene = new Scene();
 
   // Camera
-  const camera = new THREE.PerspectiveCamera(
+  const camera = new PerspectiveCamera(
     75,
     sizes.width / sizes.height,
     0.1,
@@ -26,7 +26,7 @@ export const initializeEnvironment = () => {
   scene.add(camera);
 
   // Renderer
-  const renderer = new THREE.WebGLRenderer({
+  const renderer = new WebGLRenderer({
     canvas,
   });
 
