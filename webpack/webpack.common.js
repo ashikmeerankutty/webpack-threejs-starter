@@ -23,7 +23,7 @@ module.exports = {
       {
         test: /\.((c|sa|sc)ss)$/i,
         use: [
-          // Creates `style` nodes from JS strings
+          // extracts CSS into separate files
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
