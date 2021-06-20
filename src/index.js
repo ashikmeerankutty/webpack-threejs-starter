@@ -1,8 +1,9 @@
 import './styles/index.scss';
 import * as THREE from 'three';
-import { initializeEnvironment } from './common/base';
+import { enableOrbitControls, initializeEnvironment } from './common/base';
 
-const { scene, renderer, camera } = initializeEnvironment();
+const { scene, renderer, camera, canvas } = initializeEnvironment();
+enableOrbitControls(camera, canvas);
 
 const cubeGeometry = new THREE.BoxBufferGeometry(1, 1, 1);
 const cubeMaterial = new THREE.MeshNormalMaterial();

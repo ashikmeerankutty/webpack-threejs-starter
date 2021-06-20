@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export const sizes = {};
 sizes.width = window.innerWidth;
@@ -9,6 +10,8 @@ sizes.height = window.innerHeight;
  * @returns scene, camera
  */
 export const initializeEnvironment = () => {
+  const canvas = document.querySelector('canvas.webgl');
+
   // Scene
   const scene = new THREE.Scene();
 
@@ -24,7 +27,7 @@ export const initializeEnvironment = () => {
 
   // Renderer
   const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('.webgl'),
+    canvas,
   });
 
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -47,5 +50,16 @@ export const initializeEnvironment = () => {
     scene,
     camera,
     renderer,
+    canvas,
   };
+};
+
+/**
+ * Enable orbit control for canvas
+ * @param {*} camera
+ * @param {*} canvas
+ */
+export const enableOrbitControls = (camera, canvas) => {
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
 };
