@@ -56,6 +56,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "dat.gui": "^0.7.7",
     "three": "^0.129.0"
   }
 }

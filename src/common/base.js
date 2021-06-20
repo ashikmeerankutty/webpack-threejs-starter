@@ -62,4 +62,5 @@ export const initializeEnvironment = () => {
 export const enableOrbitControls = (camera, canvas) => {
   const controls = new OrbitControls(camera, canvas);
   controls.enableDamping = true;
+  return controls;
 };
