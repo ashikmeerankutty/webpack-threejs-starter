@@ -6,7 +6,7 @@ Download and install [Node.js](https://nodejs.org/en/download/).
 
 ```bash
 # Install dependencies
-npm iinstall
+npm install
 
 # Serve at localhost:9000
 npm run dev
